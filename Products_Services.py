@@ -6,12 +6,12 @@ from Products import DatabaseProducts
 
 class ProductsServices:
     def __init__(self, root):
-        root = root
-        root.title("Book Keeping - Products / Services")
-        root.iconbitmap('./icon.ico')
-        root.state('zoomed')
+        ps = root
+        ps.title("Book Keeping - Products / Services")
+        ps.iconbitmap('./icon.ico')
+        ps.state('zoomed')
 
-        main_frame = Frame(root)
+        main_frame = Frame(ps)
         main_frame.pack(fill=BOTH, expand=1)
 
         my_canvas = Canvas(main_frame)
@@ -61,12 +61,12 @@ class ProductsServices:
         my_canvas.bind('<Leave>', __unbound_to_mousewheel)
 
         def products():
-            root = Toplevel()
-            application = Products(root)
-            root.mainloop()
+            ps = Toplevel()
+            application = Products(ps)
+            ps.mainloop()
 
         def services():
-            root.destroy()
+            ps.destroy()
             messagebox.showinfo("Book Keeping", "This feature is not avaliable right now.")
 
         products_btn = Button(second_frame, text="Products", command=products, height=1, width=15, padx=16, bd=8, font=15)
@@ -75,4 +75,4 @@ class ProductsServices:
         services_btn = Button(second_frame, text="Services", command=services, height=1, width=15, padx=16, bd=8, font=15)
         services_btn.grid(row=0, column=1, pady=5)
 
-        root.mainloop()
+        ps.mainloop()

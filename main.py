@@ -6,14 +6,13 @@ from Supplier_Purchase import SupplierPurchase
 from Help_About import HelpAbout
 from Change_Account_Settings import ChangeAccountSettings
 
-
 class MainApp:
     def __init__(self, root):
         main_app = root
         main_app.title("Book Keeping")
         main_app.iconbitmap("./icon.ico")
         main_app.state('zoomed')
-
+        
         def customer_sales():
             root = Toplevel()
             customersales = CustomerSales(root)
@@ -163,6 +162,7 @@ class MainApp:
         Button(second_frame, height=1, width=15, padx=16, bd=8, font=15, text="Change Account Settings", command=changeaccountsettings).grid(row=4, column=4)
 
         main_app.mainloop()
+
 
 root = Tk()
 mainapp = MainApp(root)

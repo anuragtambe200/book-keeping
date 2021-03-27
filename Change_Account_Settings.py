@@ -61,13 +61,12 @@ class ChangeAccountSettings:
 
         def reset_the_database():
             self.root.destroy()
-            warn = messagebox.askyesno("Book Keeping - Change Account Settings", "Are you sure you want to reset all data?")
+            warn = messagebox.askyesno("Book Keeping - Settings", "Are you sure you want to reset all data?")
             if warn == 1:
-                warn2 = messagebox.askyesno("Book Keeping - Change Account Settings", "Are you really sure you want to reset all data?")
+                warn2 = messagebox.askyesno("Book Keeping - Settings", "Are you really sure you want to reset all data?")
                 if warn2 == 1:
                     os.remove("Book Keeping.db")
-                    messagebox.showinfo("Book Keeping - Change Account Settings", "Data Deleted Successfully. Reatart the app to take changes.")
-                    
+                    messagebox.showinfo("Book Keeping - Settings", "Data Deleted Successfully. Reatart the app to take changes.")                    
 
         Button(second_frame, height=1, width=15, padx=16, bd=8, font=15, text="Reset All Data", command=reset_the_database).grid(row=0, column=0, pady=10, padx=20)
 
